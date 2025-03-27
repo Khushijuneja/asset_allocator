@@ -2,14 +2,13 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import ContentWrapper from "../ContentWrapper/ContentWrapper";
+import ContentWrapper from "../../components/ContentWrapper/ContentWrapper";
+import { navLogo } from "../../public/assets";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [hideTopBar, setHideTopBar] = useState(false);
   const [mobileMargin, setMobileMargin] = useState(120);
-  const [showNavbar, setShowNavbar] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(window.scrollY);
 
   const navigate = useNavigate();
 
@@ -19,19 +18,7 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-
-      if (currentScrollY > lastScrollY) {
-        // Scrolling down
-        setShowNavbar(false);
-      } else {
-        // Scrolling up
-        setShowNavbar(true);
-      }
-
-      setLastScrollY(currentScrollY);
-
-      if (currentScrollY > 50) {
+      if (window.scrollY > 50) {
         setHideTopBar(true);
         setMobileMargin(70);
       } else {
@@ -42,28 +29,24 @@ const Navbar = () => {
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [lastScrollY]);
+  }, []);
 
   return (
-    <header
-      className={`text-white fixed top-0 left-0 w-full z-[100] transition-transform duration-500 ${
-        showNavbar ? "translate-y-0" : "-translate-y-full"
-      }`}
-    >
+    <header className="text-white relative z-[100]">
       {/* Top Bar - Animated Disappearance on Scroll */}
       <div
-        className={`bg-gradient-to-r rounded-b-xl from-orange-900 to-orange-700 text-gray-200 flex flex-wrap justify-between items-center px-4 md:px-10 text-sm transition-transform duration-500 ${
+        className={`bg-gradient-to-r rounded-b-xl from-blue-900 to-blue-700 text-gray-200 flex flex-wrap justify-between items-center px-4 md:px-10 text-sm transition-transform duration-500 ${
           hideTopBar ? "-translate-y-full" : "translate-y-0"
         } fixed top-0 left-0 w-full z-[100]`}
       >
         <ContentWrapper>
           <div className="flex space-x-4">
             <a href="mailto:mail@startuprr.com" className="hover:underline">
-              consultants@gmail.com
+              assetallocator@gmail.com
             </a>
             <span className="hidden md:block mx-2">|</span>
             <a href="tel:9403455280" className="hover:underline">
-              +91 9373770225
+              +91 9970436943
             </a>
           </div>
         </ContentWrapper>
@@ -73,7 +56,7 @@ const Navbar = () => {
       <nav className="z-[90]">
         <div
           style={{ top: hideTopBar ? "0" : "40px" }}
-          className="pt-4 rounded-b-full left-0 w-full bg-gradient-to-r from-orange-900 via-orange-700 to-orange-600 text-gray-100 shadow-md px-4 md:px-10 flex justify-between items-center transition-all duration-500 z-[90]"
+          className="pt-4 rounded-b-full left-0 w-full bg-gradient-to-r from-blue-900 via-blue-700 to-blue-600 text-gray-100 shadow-md px-4 md:px-10 flex justify-between items-center transition-all duration-500 z-[90]"
         >
           <div
             className="flex items-center space-x-4 cursor-pointer max-w-[1440px] z-[90]"
@@ -81,12 +64,11 @@ const Navbar = () => {
           >
             <ContentWrapper>
               <div className="p-2 rounded-full mx-10">
-                {/* <img
-                  className="h-12 md:h-10 object-cover rounded-2xl shadow-md active:scale-95"
+                <img
+                  className="h-12 w-33 md:h-10 object-cover rounded-2xl  active:scale-95"
                   src={navLogo}
                   alt="Envocare"
-                /> */}
-                <h1 className=" font-extrabold py-2 text-xl ">Asset Allocator</h1>
+                />
               </div>
             </ContentWrapper>
           </div>
@@ -105,7 +87,7 @@ const Navbar = () => {
                 onClick={() =>
                   navigate(`/${item.toLowerCase().replace(" ", "")}`)
                 }
-                className="hover:text-green-900 cursor-pointer transition duration-300"
+                className="hover:text-blue-900 cursor-pointer transition duration-300"
               >
                 {item}
               </button>
@@ -113,7 +95,7 @@ const Navbar = () => {
           </div>
           {/* Mobile Menu Toggle */}
           <div className="lg:hidden">
-            <button onClick={toggleMenu} className="text-orange-400 px-3 py-2">
+            <button onClick={toggleMenu} className="text-blue-400 px-3 py-2">
               {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
           </div>
@@ -128,7 +110,7 @@ const Navbar = () => {
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
             transition={{ duration: 0.4 }}
-            className="fixed top-0 right-0 h-full w-3/4 max-w-sm shadow-md bg-gradient-to-b from-orange-900 via-orange-800 to-orange-700 px-6 py-6 lg:hidden space-y-4 z-[110]"
+            className="fixed top-0 right-0 h-full w-3/4 max-w-sm shadow-md bg-gradient-to-b from-blue-900 via-blue-800 to-blue-700 px-6 py-6 lg:hidden space-y-4 z-[110]"
           >
             <button
               onClick={toggleMenu}
