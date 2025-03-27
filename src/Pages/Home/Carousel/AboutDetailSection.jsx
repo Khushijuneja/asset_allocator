@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import servicesData from "../../../constants/service.json";
 import TabSwitcher from "../../../Components/TabSwitcher/TabSwitcher";
-import CarouselAbout from "./CarouselABout";
+import CarouselABout from "./CarouselABout";
 
 function AboutDetailSection() {
   const [details, setDetails] = useState([]);
@@ -38,7 +38,7 @@ function AboutDetailSection() {
 
       <TabSwitcher onTabChange={onTabChange} tabs={["All"]} />
 
-      <CarouselAbout details={filteredDetails} loading={loading} />
+      <CarouselABout details={filteredDetails} loading={loading} />
     </section>
   );
 }

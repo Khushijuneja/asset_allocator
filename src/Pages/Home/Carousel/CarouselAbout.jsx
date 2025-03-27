@@ -1,7 +1,7 @@
 import React from "react";
 import CarouselCard from "./CarouselCard";
 
-const CarouselAbout = ({ details, loading }) => {
+const CarouselABout = ({ details, loading }) => {
   return (
     <div className="flex flex-wrap justify-center items-center gap-2 ">
       {!loading
@@ -20,4 +20,4 @@ const CarouselAbout = ({ details, loading }) => {
   );
 };
 
-export default CarouselAbout;
+export default CarouselABout;
