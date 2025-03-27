@@ -88,15 +88,15 @@ const Footer = () => {
 
         <div className="mt-10 text-center flex flex-col justify-center items-start text-gray-300">
           <p>
-            <IoLocationOutline size={20} className="inline mr-2" /> 123 Greenway
-            Street, EcoCity, Earth
+            <IoLocationOutline size={20} className="inline mr-2" /> 456 Wealth
+            Avenue, Finance City, World
           </p>
           <p>
             <IoCallOutline size={20} className="inline mr-2" /> +91 9876543210
           </p>
           <p>
-            <MdOutlineEmail size={20} className="inline mr-2" />{" "}
-            support@envocare.com
+            <MdOutlineEmail size={20} className="inline mr-2" />
+            assetallocator@gmail.com
           </p>
         </div>
       </div>
@@ -107,7 +107,6 @@ const Footer = () => {
           <a href="#" className="text-blue-400 hover:underline">
             Privacy Policy
           </a>{" "}
-          
           <a href="#" className="text-blue-400 hover:underline">
             Terms of Use
           </a>
