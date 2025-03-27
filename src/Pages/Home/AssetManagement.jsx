@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { ParallaxProvider } from "react-scroll-parallax";
 import { ChevronDown, ChevronUp } from "lucide-react";
+import ContentWrapper from "../../Components/ContentWrapper/ContentWrapper";
 
 const assetManagementData = {
   "Investment Planning": {
@@ -74,72 +75,74 @@ export default function AssetManagementSection() {
 
   return (
     <ParallaxProvider>
-      <div className="w-full relative mt-10 mx-auto bg-white shadow-even rounded-2xl p-4 flex flex-col md:w-[86%] md:p-8 text-center">
-        <h1 className="text-3xl font-extrabold mb-6">
-          Asset Management Programs
-        </h1>
+      <ContentWrapper>
+        <div className="w-full relative mt-10 mx-auto bg-white shadow-even rounded-2xl p-4 flex flex-col md:w-[86%] md:p-8 text-center">
+          <h1 className="text-3xl font-extrabold mb-6">
+            Asset Management Programs
+          </h1>
 
-        <div className="space-y-4">
-          {Object.keys(assetManagementData).map((key) => (
-            <motion.div
-              key={key}
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-            >
-              <div
-                className="p-4 shadow-lg rounded cursor-pointer bg-gray-100 hover:bg-gray-200 flex justify-between items-center"
-                onClick={() => toggleSection(key)}
+          <div className="space-y-4">
+            {Object.keys(assetManagementData).map((key) => (
+              <motion.div
+                key={key}
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
               >
-                <span className="font-semibold">{key}</span>
-                {expandedSections.includes(key) ? (
-                  <ChevronUp className="w-5 h-5" />
-                ) : (
-                  <ChevronDown className="w-5 h-5" />
-                )}
-              </div>
-
-              {expandedSections.includes(key) && (
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.3 }}
-                  className="mt-4 p-4 rounded bg-gray-50 shadow-lg text-left"
+                <div
+                  className="p-4 shadow-lg rounded cursor-pointer bg-gray-100 hover:bg-gray-200 flex justify-between items-center"
+                  onClick={() => toggleSection(key)}
                 >
-                  <h2 className="text-xl font-semibold">{key}</h2>
-                  <p className="mt-2 text-gray-600">
-                    {assetManagementData[key].description}
-                  </p>
-                  <p className="mt-2 text-gray-500">
-                    <strong>Duration:</strong>{" "}
-                    {assetManagementData[key].duration}
-                  </p>
-                  <p className="mt-2 text-gray-500">
-                    <strong>Fees:</strong> {assetManagementData[key].fees}
-                  </p>
-                  <p className="mt-2 text-gray-500 font-semibold">
-                    Payment Options:
-                  </p>
-                  <ul className="mt-2 list-disc ml-5 text-gray-600">
-                    {assetManagementData[key].paymentOptions.map(
-                      (option, index) => (
+                  <span className="font-semibold">{key}</span>
+                  {expandedSections.includes(key) ? (
+                    <ChevronUp className="w-5 h-5" />
+                  ) : (
+                    <ChevronDown className="w-5 h-5" />
+                  )}
+                </div>
+
+                {expandedSections.includes(key) && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.3 }}
+                    className="mt-4 p-4 rounded bg-gray-50 shadow-lg text-left"
+                  >
+                    <h2 className="text-xl font-semibold">{key}</h2>
+                    <p className="mt-2 text-gray-600">
+                      {assetManagementData[key].description}
+                    </p>
+                    <p className="mt-2 text-gray-500">
+                      <strong>Duration:</strong>{" "}
+                      {assetManagementData[key].duration}
+                    </p>
+                    <p className="mt-2 text-gray-500">
+                      <strong>Fees:</strong> {assetManagementData[key].fees}
+                    </p>
+                    <p className="mt-2 text-gray-500 font-semibold">
+                      Payment Options:
+                    </p>
+                    <ul className="mt-2 list-disc ml-5 text-gray-600">
+                      {assetManagementData[key].paymentOptions.map(
+                        (option, index) => (
+                          <li key={index}>{option}</li>
+                        )
+                      )}
+                    </ul>
+                    <p className="mt-2 text-gray-500 font-semibold">
+                      Module Details:
+                    </p>
+                    <ul className="mt-2 list-disc ml-5 text-gray-600">
+                      {assetManagementData[key].modules.map((option, index) => (
                         <li key={index}>{option}</li>
-                      )
-                    )}
-                  </ul>
-                  <p className="mt-2 text-gray-500 font-semibold">
-                    Module Details:
-                  </p>
-                  <ul className="mt-2 list-disc ml-5 text-gray-600">
-                    {assetManagementData[key].modules.map((option, index) => (
-                      <li key={index}>{option}</li>
-                    ))}
-                  </ul>
-                </motion.div>
-              )}
-            </motion.div>
-          ))}
+                      ))}
+                    </ul>
+                  </motion.div>
+                )}
+              </motion.div>
+            ))}
+          </div>
         </div>
-      </div>
+      </ContentWrapper>
     </ParallaxProvider>
   );
 }
