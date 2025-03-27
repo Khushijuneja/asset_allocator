@@ -56,7 +56,7 @@ const Navbar = () => {
       <nav className="z-[90]">
         <div
           style={{ top: hideTopBar ? "0" : "40px" }}
-          className="pt-4 rounded-b-full left-0 w-full bg-gradient-to-r from-blue-900 via-blue-700 to-blue-600 text-gray-100 shadow-md px-4 md:px-10 flex justify-between items-center transition-all duration-500 z-[90]"
+          className="pt-4  left-0 w-full bg-gradient-to-r from-blue-900 via-blue-700 to-blue-600 text-gray-100 shadow-md px-4 md:px-10 flex justify-between items-center transition-all duration-500 z-[90]"
         >
           <div
             className="flex items-center space-x-4 cursor-pointer max-w-[1440px] z-[90]"

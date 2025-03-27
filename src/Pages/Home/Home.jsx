@@ -1,13 +1,14 @@
-import React from 'react'
-import HeroSection from './HeroSection';
+import React from "react";
+import HeroSection from "./HeroSection";
+import CTA from "./CTA";
+import ServicesSection from "./AboutService";
 
 const Home = () => {
   return (
     <div>
-     <HeroSection/>
-    
-    
-  
+      <HeroSection />
+      <ServicesSection />
+      <CTA />
     </div>
   );
 };

@@ -12,23 +12,23 @@ const HeroSection = () => {
       {
         image:
           "https://images.unsplash.com/photo-1553451166-232112bda6f6?q=80&w=2072&auto=format&fit=crop",
-        title: "Innovating a Sustainable Future",
+        title: "Expert Financial Planning",
         description:
-          "Creating eco-friendly solutions for wastewater management and sustainable infrastructure.",
+          "Tailored investment strategies to maximize returns and minimize risks for sustainable financial growth.",
       },
       {
         image:
           "https://images.unsplash.com/photo-1455849318743-b2233052fcff?q=80&w=2069&auto=format&fit=crop",
-        title: "Revolutionizing Engineering & Environment",
+        title: "Comprehensive Risk Management",
         description:
-          "Leading the way in green industry innovations and environmental sustainability.",
+          "Ensuring financial security with cutting-edge risk assessment and mitigation strategies.",
       },
       {
         image:
           "https://images.unsplash.com/photo-1482440308425-276ad0f28b19?q=80&w=2070&auto=format&fit=crop",
-        title: "Committed to Green Energy Solutions",
+        title: "Smart Asset Allocation",
         description:
-          "Advancing renewable energy and resource efficiency for a cleaner world.",
+          "Optimizing asset distribution to align with your long-term financial goals and market trends.",
       },
     ];
 
