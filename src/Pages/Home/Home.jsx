@@ -5,6 +5,10 @@ import ServicesSection from "./AboutService";
 import AssetManagementSection from "./AssetManagement";
 import VideoSection from "./VideoSection";
 import AboutDetailSection from "./Carousel/AboutDetailSection";
+import Testimonials from "./Testimonials";
+import Expertise from "./Expertise";
+import LogoGrid from "./LogoGrid";
+import DepartmentSection from "./Process";
 
 const Home = () => {
   return (
@@ -12,9 +16,13 @@ const Home = () => {
       <HeroSection />
       <VideoSection />
       <AboutDetailSection />
+      <Expertise />
+      <LogoGrid />
       <ServicesSection />
       <AssetManagementSection />
+      <DepartmentSection />
       <CTA />
+      <Testimonials />
     </div>
   );
 };
